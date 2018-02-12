@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+
+<html>
+<header>
+<meta charset="utf-8" />
+<title>cahier_de_charge_groupe_K</title>
+<style type="text/css">
+h1{color:green;
+text-decoration:underline;
+letter-spacing:2pts;
+word-spacing:2pts;
+text-align:center;
+text-transform:capitalize;
+
+font-family:"arial;occidental;romain";
+font-size:4pts;
+font-style:italic;
+font-weight:bold
+}
+
+
+h2{color:#ffff00;
+text-decoration:0verline;
+letter-spacing:4pts;
+word-spacing:4pts;
+text-align:right;
+text-transform:uppercase;
+
+font-family:"arial;occidental;romain";
+font-size:4pts;
+font-style:italic;
+font-weight:normal}
+
+
+
+h3{color:red;
+text-decoration:line-throught;
+letter-spacing:1pts;
+word-spacing:1pts;
+text-align:left;
+text-transform:capitalize;
+
+font-family:"arial;occidental;romain";
+font-size:2pts;
+font-style:normal;
+font-weight:bold}
+
+
+
+
+</style>
+</header>
+
+<body>
+<h2>SOUMOUNOU CHEICKNA HAMALA</h2>
+<h2>AMEGANDJI</h2>
+<h1>cahier de charge</h1>
+<h1>OBJET</h1>
+<p>l’université de Bamako souhaite créer une  application
+informatique pour la gestion autonome de la médiathèque de son université. L’ouverture au public de la médiathèque est prévue à la rentrée 2019. Elle n’est pas informatisée ,elle fonctionne manuellement .</p>
+
+<p>l’entreprise TEMPLATE est designé Prestataire, chargée de réaliser ce projet pour le bon fonctionnement de la nouvelle application et une bonne gestion de la médiathèque.</p>
+
+<h1>Enjeux et objectifs:</h1>
+
+<p>TEMPLATE a fait le constat que l’utilisation manuelle ne répondait pas à l’ensemble des besoins, causait un certain nombre de déficiences.
+Nous avons donc décidé de créer une application visant à répondre aux besoins et notamment aux principales attentes suivantes :</p>
+
+<ul>
+<li>La possibilité de location d’une œuvre ( film, livre ,document audio )</li>
+<li>la possibilité d’insérer des informations</li>
+<li>La gestion des emprunts(dates retours)</li>
+<li>La réservation d’un document</li>
+<li>La facilité de la mise à jour(informations,stock,…..)</li>
+<li>Assurer la satisfaction  des utilisateurs.</li>
+</ul>
+
+<p<Notre travail  consistera donc à modéliser le système médiathèque et à rendre l'application simple à manipuler de façon a permettre aux
+responsables la bonne gestion sur les niveaux : insertion, mise à jour, et la recherche des emprunts et des adhérents...etc. </p> 
+
+
+
+	 
+ <h1>Description de la mediatheque (Fonctionnalités et contraintes)</h1> 
+<ol>
+ <li><h3>Gestion des Acteurs :</h3></li>
+<p>la médiathèque compte 20 gestionnaires et 1050 etudiants inscrits et 45
+enseignants.
+la médiathèque contient un certain nombre d’Objets disponibles  à l’emprunt. 
+Le contenu de la médiathèque est ouvert au public, mais les personnes désirant emprunter des ouvrages pour une durée et à un tarif donnés doivent s’inscrire en tant que client. </p>
+
+Nous souhaiterons avoir une application capable gérer plusieurs taches suivantes :
+
+<ul>
+
+<li>Des adhérents (les étudiants, les enseignants,...) qui ont déjà un compte en ligne et qui auront un accès illimité aux objets de la médiathèque. Ils pourront utiliser tous les services, comme emprunter ou réserver les ressources, voir tous les catalogues, participer à des événements(dîner, conférence)</li>
+
+<li>Des bibliothécaires (gestionnaires), qui sont chargés du bon fonctionnement de la médiathèque. Ils pourront ajouter des objets, les filtrer,les supprimer et les modifier selon leurs convenances.ils sont aussi chargés de la gestion des adherents et la gestion des objets.</li>
+
+<li>Des visiteurs, qui ne disposent pas d’ identifiant de connexion donc sont privés des privilèges comme l’emprunt,la réservation mais qui ont cependant accès a tout le catalogue en ligne.
+Un administrateur qui sera chargé de la mise a jour des systèmes, la gestion des
+bibliothécaires (créer les comptes des bibliothécaires, et de les supprimer).en un mot il est chargé de tous le bon fonctionnement de la médiathèque. </li>
+</ul>
+
+
+
+
+
+
+
+
+
+    <li><h3>Les Objets (type, répartition, contraintes...) </h3></li>
+
+     <ul>  
+     <li> Les documents disponibles sont  des des livres ou des revues ,des CD , des DVD . Chaque document est repéré par un code unique et une localisation (salle/étagère) dans la médiathèque. Certains documents ne peuvent pas être empruntés, mais uniquement consultés sur place. 
+
+     <li>Les informations communes aux documents sont les suivantes : le titre, l'auteur (écrivain, groupe ou metteur en scène) et l'année d'édition.</li>
+
+    <li>Les livres possèdent un genre  ( éducation, roman ...) et un nombre de pages.et parmi eux des livres spéciaux qui seront consultables uniquement sur place. </li>
+
+    <li>les revues qui seront consultables uniquement sur place
+ 
+     <li>Les CD ont un genre musical ( classique, variétés internationales ), une classification dans ce genre (par exemple,« balani » pour le genre « classique », ou « rock » pour le genre « international</li> »).
+
+     <li>Les DVD ont un genre ( documentaire ,  comédie,théâtre,film ...) une durée d'émission et une mention légale de diffusion</li>
+
+ Chaque document est repéré par sa côte(identifiant) ; Un livre , un DVD ou un CD pourra être trouvé également par son titre et son (ses) auteur(s), une revue par son titre et sa date.
+
+
+
+ L'ajout d'un nouveau Objet génère un identifiant unique et non récupérable ; cet identifiant est incrémenté automatiquement.</li>
+</ul>
+
+</ol>
+	
+
+
+
+
+
+
+
+
+<h1>mécanisme d’inscription</h1>
+<p>L'inscription des clients consiste à remplir un formulaire en ligne afin de récupérer des informations telles que son nom, son prénom, son mot de passe, ainsi que son adresse et son émail. Un client sera identifié par son mail et son mot de passe, pour éviter les doublons.le client finalisera l’inscription aupres d’un gestionnaire (vérifications des données transmises en lignes et frais annuel de l’inscription)</p>
+ <p>Tout client inscrit aura droit à une carte d'accès et peut  emprunter a la médiathèque.</p>
+En cas de perte de cette carte , une demande de renouvellement est possible à travers
+l'application.
+<p> Le client peut s'inscrire en ligne ou directement au sein de la mediatheque.</p>
+
+<h1>Mecanisme d’emprunt</h1>
+
+<P>Chaque sortie d’objet crée une fiche d'emprunt. cette
+fiche est constitué : identité client(adhérent), la date de début du prêt et pour chaque objet emprunté, la date limite de restitution. Les durées de prêt dépendent du type de d’objet. Le non remise des objets à temps entraîne une amende.</p>
+<p>L'emprunt d'un objet par un client obéit à certaines règles :</P>
+
+<ul>
+<li>Un client ne peut pas emprunter plus de 5 d’objets. Dès que ce nombre  est atteint pour un client donné, tout nouveau prêt devra être impossible.
+
+<li>Tout client qui n'a pas retourner un objet  avant sa date limite de retour ne
+pourra plus faire de nouvel emprunt tant qu'il n'aura pas régularisé sa situation
+même si le nombre maximal d'emprunts n'est pas atteint. Pour ce faire, à
+chaque demande d'emprunt, on vérifie s'il est à jour dans ses restitutions ; si ce
+n'est pas le cas, l'emprunt n'est pas autorisé et le client est marqué de telle manière
+qu'il ne puisse plus emprunter de nouveaux objets. De plus, l'ensemble des
+fiches emprunt sont parcouru chaque jour afin de repérer s'il existe des objets
+pour lesquels la date limite de restitution est dépassée ; pour chacune de ces fiches
+trouvées, le client concerné est marqué comme précédemment et la médiathèque
+envoie un mail de rappel. </li>
+
+<li>Un gestionnaire peut emprunter si ce dernier est suivi par un autre gestionnaire. </li>
+
+<li>La durée des emprunts est de 3 semaine pour tout objet. </li>
+</ul>
+
+<h1>Mecanisme de reservation</h1>
+
+<p>Suite à la recherche d'un objet  au sein de la médiathèque, le client
+identifié peut choisir de réserver ce objet. Quelques objet spécifiques ne sont
+cependant pas réservables ni emprunt ables. </p>
+<p>La procédure réservation consiste à demander la mise a part du document pour pouvoir l'emprunter. Ainsi, un client pourra réserver des objets de chez lui et dans un court délai, aller récupérer les objets réservés, et donc de les emprunter. Dans le cas ou un ou plusieurs objets ne sont pas disponibles alors ces document sont non reservables.</p>
+
+
+<h1>Mécanisme de mise en jour</h1>
+<p>Le système de gestion doit prévoir toute opération d'ajout et de suppression des
+objets (ressources). Les informations concernant les ressources de la médiathèque ne
+sont pas construites par le système (par exemple, la localisation des documents dans les locaux), mais supposées fournies par les bibliothécaires.</p>
+
+<p>le système devra toutefois veiller à la cohérence des informations stockées (mail cohérent, impossibilité d'avoir deux objets différents avec le même nom, emprunter deux fois le même document, etc.).
+Il existe des services qui seront automatiques :</p>
+
+<ul>
+
+<li>Les médias empruntés sont automatiquement archivés (ils deviennent ainsi des fiches emprunts) par le système avec le client emprunteur, la date de début du prêt, la date limite de restitution et l'état de l'emprunt : "en cours" ou "date limite dépassé".
+
+   <li>Le système parcourt les fiches emprunts tous les jours. S'il existe des documents qui n'ont pas été rendus et dont la date limite est dépassée, le client correspondant est marqué comme "Client pas à jour."</li>
+
+    <li> Pour tout client qui n'est pas à jour, le système envoie un message de rappel (par intervalle de 3 jours).</li>
+  
+    <li> Lorsqu'un client rend un document, l'état de la fiche emprunt est marquée définitivement par les statuts "rendu" ou "rendu en retard".</li>
+
+  
+
+
+    <li> Lorsqu'un document n'est pas rendu 30 jours après sa date limite, on considère que c'est un non retour et qu'il est perdu. On le supprime alors
+      et l'état de la fiche emprunt devient "Perdu".</li>
+</ul>
+      
+  
+
+<h1>Contraintes sécuritaires</h1>
+
+Le client peut à tout moment accéder à ses informations et les modifier.
+
+<p> il est obligatoire que l’utilisateur est appelé 
+s’authentifier à travers un login (email) et un mot de passe.</p>
+
+<p>l’espace administrateur  n’est accessible qu’après une
+identification.</p>
+
+<p>La mise en place d’un système de cryptage  pour les mots de passe à fin d’éviter une usurpation des comptes par les administrateurs,gestionnaires ou des personnes malveillants.</p>
+
+
+<h1>Contraintes matérielles</h1>
+<p>Les caractéristiques de nos postes utilisateur sont les suivantes :</p>
+
+<ul>
+<li>PC Windows 7</li> 
+<li>serveur</li>
+<li>Processeur à partir de 1,8 GHz</li>
+<li> RAM : 1 Go Minimum</li>
+<li>Disque Dur : 500Go</li>
+<li>Navigateur Internet : Internet Explorer , Firefox   les dernières versions</li>
+
+<li>Connexion Internet : Débit moyen :512 Kbit/s</li>
+</ul>
+
+
+<h1>Contraintes économiques</h1>
+<p>ce projet est évalué a un coût total de 150 000 euros.
+Ce budget  sera divisé en plusieurs parties :</p>
+<ul>
+<li>Le salaire des développeurs</li>
+ <li>La maintenance du programme.</li>
+ <li>Maintenance des serveurs.</li>
+</ul>
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
